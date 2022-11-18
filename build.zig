@@ -341,11 +341,13 @@ pub fn build(b: *std.build.Builder) void {
         mode,
         "",
     );
-    iguanabear.install();
 
-    // const main_tests = b.addTest("src/lib.zig");
-    // main_tests.setBuildMode(mode);
+    const test_step = b.step("test", "Run library tests");
+    {
+        const iguanabear_tests = b.addTest("src/iguanabear.zig");
+        iguanabear_tests.setBuildMode(mode);
+        iguanabear_tests.linkLibrary(iguanabear);
 
-    // const test_step = b.step("test", "Run library tests");
-    // test_step.dependOn(&main_tests.step);
+        test_step.dependOn(&iguanabear_tests.step);
+    }
 }
