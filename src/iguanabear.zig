@@ -1,17 +1,21 @@
 const std = @import("std");
 
-// pub const hash = @import("hash.zig");
-// pub const hmac = @import("hmac.zig");
-// pub const kdf = @import("kdf.zig");
-// pub const rand = @import("rand.zig");
-// pub const prf = @import("prf.zig");
-// pub const block = @import("block.zig");
-// pub const aead = @import("aead.zig");
-// pub const rsa = @import("rsa.zig");
-// pub const ec = @import("ec.zig");
-// pub const ssl = @import("ssl.zig");
-// pub const x509 = @import("x509.zig");
-// pub const pem = @import("pem.zig");
+test "IguanaBear" {
+    _ = Hash;
+}
+
+pub const Hash = @import("hash.zig");
+// pub const HMAC = @import("hmac.zig");
+// pub const KDF = @import("kdf.zig");
+// pub const Rand = @import("rand.zig");
+// pub const PRF = @import("prf.zig");
+// pub const Block = @import("block.zig");
+// pub const AEAD = @import("aead.zig");
+// pub const RSA = @import("rsa.zig");
+// pub const EC = @import("ec.zig");
+// pub const SSL = @import("ssl.zig");
+// pub const X509 = @import("x509.zig");
+// pub const PEM = @import("pem.zig");
 
 pub const ConfigOption = extern struct {
     name: [*:0]const u8,
